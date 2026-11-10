@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-playfair: 'Playfair Display', serif;
+  --font-dm-sans: 'DM Sans', sans-serif;
+  --font-great-vibes: 'Great Vibes', cursive;
+  --color-blush: #F8E8EC;
+  --color-rose: #E8B8C3;
+  --color-ivory: #FFF9F4;
+  --color-gold: #D6B77A;
+  --color-burgundy: #633B4A;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+body {
+  background-color: #FFF9F4;
+  color: #383039;
+  font-family: var(--font-dm-sans), sans-serif;
+  overflow-x: hidden;
+  selection-background-color: #E8B8C3;
+  selection-color: #633B4A;
+}
+
+::selection {
+  background: #E8B8C3;
+  color: #633B4A;
+}
+
+/* Custom Luxury Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFF9F4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E8B8C3;
+  border-radius: 9999px;
+  border: 2px solid #FFF9F4;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D99AA8;
+}
+
+/* Luxury Paper Texture Effect */
+.bg-paper-texture {
+  background-color: #FFF9F4;
+  background-image: radial-gradient(#E8B8C3 0.6px, transparent 0.6px), radial-gradient(#D6B77A 0.4px, #FFF9F4 0.4px);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+}
+
+/* Glassmorphism with Rose Warmth */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(232, 184, 195, 0.35);
+}
+
+.glass-panel-gold {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(214, 183, 122, 0.4);
+}
+
+/* Gold Gradient Text */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #B98598 0%, #D6B77A 50%, #B98598 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-rose-gradient {
+  background: linear-gradient(135deg, #633B4A 0%, #D99AA8 60%, #B98598 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtle Shimmer Border */
+.border-gold-shimmer {
+  border: 1px solid transparent;
+  background: linear-gradient(#ffffff, #ffffff) padding-box,
+              linear-gradient(135deg, #E8B8C3, #D6B77A, #E8B8C3) border-box;
+}
+
+/* Wax Seal Style */
+.wax-seal {
+  background: radial-gradient(circle at 35% 35%, #D99AA8 0%, #984C62 55%, #633B4A 100%);
+  box-shadow: 0 4px 15px rgba(99, 59, 74, 0.35), inset 0 2px 4px rgba(255, 255, 255, 0.4);
+}
+
+/* Polaroid Paper Shadow */
+.polaroid-card {
+  background: #ffffff;
+  padding: 12px 12px 28px 12px;
+  box-shadow: 0 10px 30px -4px rgba(99, 59, 74, 0.12), 0 4px 10px -2px rgba(99, 59, 74, 0.05);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.polaroid-card:hover {
+  transform: translateY(-8px) rotate(1deg);
+  box-shadow: 0 20px 40px -5px rgba(99, 59, 74, 0.18), 0 8px 16px -2px rgba(99, 59, 74, 0.08);
+}
+
+/* Candle flame glow animation */
+@keyframes flameFlicker {
+  0%, 100% {
+    transform: scale(1) rotate(-1deg);
+    opacity: 0.95;
+    box-shadow: 0 0 15px #FFD700, 0 0 35px #FF7F50;
+  }
+  25% {
+    transform: scale(1.08, 0.95) rotate(1deg);
+    opacity: 1;
+    box-shadow: 0 0 20px #FFD700, 0 0 45px #FF8C00;
+  }
+  50% {
+    transform: scale(0.96, 1.05) rotate(-2deg);
+    opacity: 0.9;
+    box-shadow: 0 0 14px #FFD700, 0 0 30px #FF6347;
+  }
+  75% {
+    transform: scale(1.04, 0.98) rotate(2deg);
+    opacity: 0.98;
+    box-shadow: 0 0 18px #FFD700, 0 0 40px #FFA07A;
+  }
+}
+
+.animate-flame {
+  animation: flameFlicker 1.8s ease-in-out infinite;
+}
+
+/* Floating Petals background effect */
+@keyframes petalFall {
+  0% {
+    transform: translate(0, -10vh) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.75;
+  }
+  85% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translate(60px, 110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
